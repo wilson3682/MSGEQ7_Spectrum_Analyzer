@@ -99,7 +99,8 @@ void loop() {
 void refreshSpectrum() {
   digitalWrite(RESET_PIN , HIGH);
   digitalWrite(RESET_PIN , LOW);
-  for (int i = 0; i < 7  ; i++)  {  // Change it to reverse
+  //for (int i = 0; i < 7; i++)  {  // Change it to reverse the Frequencies
+  for (int i = 6; i >= 0; i--) {  // Change it to reverse the Frequencies
     myOctaves[6 - i].refreshBuffer();
     digitalWrite(STROBE_PIN , LOW);
     myOctaves[6 - i].readVal();
